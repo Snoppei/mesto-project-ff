@@ -12,9 +12,7 @@ function addCard(cardProperties, deleteCard) {
     cardImage.alt = 'Фотография, ' + cardProperties.name;
     cardTitle.textContent = cardProperties.name;
 
-    cardDeleteButton.addEventListener('click', function () {
-        deleteCard(cardElement);
-    })
+    cardDeleteButton.addEventListener('click', () => deleteCard(cardElement));
 
     placesList.append(cardElement);
 }
@@ -23,6 +21,4 @@ function deleteCard(card) {
     card.remove();
 }
 
-initialCards.forEach(function (element) {
-    addCard(element, deleteCard);
-});
+initialCards.forEach(element => addCard(element, deleteCard));
